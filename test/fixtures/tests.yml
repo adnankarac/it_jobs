@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  description: MyString
+  max: 1
+  company_id: 
+
+two:
+  description: MyString
+  max: 1
+  company_id: 

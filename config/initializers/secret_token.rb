@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-ItJobs::Application.config.secret_key_base = '648da8b49831b5c8b45927686b36f390eb0ea6d2735ca1eb2d5d144e28c5edc669e4622449089135bfea94e3aacba08ae94c394031c9c9cc84bee032f6769069'
+ItJobs::Application.config.secret_key_base = 'c4cf6aaddbbbc8f24241975fde5403fc2cd69dda750e916d0c69308cdcdef31a41c5ca42bf0088b43be03e1965fbaa0c85704ec750086829c03b5a8f812d5af7'

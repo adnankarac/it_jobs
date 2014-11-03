@@ -1,0 +1,15 @@
+<H2>Test<H2>
+
+<div id="test">
+	<div id="info">
+		Test id: <%= @test.id %>
+		Test kreirao: <%= @test.company || "admin" %>
+		Maksimalan broj bodova: <%= @test.max %>
+	</div>
+	</br>
+	<div id="questions">
+		<% @test.questions.each do |q| %>
+			<%= link_to q.question, test_question_path(@test.id, q) %> </br>
+		<% end %>
+	</div>
+</div>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  date: 2014-09-30
+  jobApplicationStatus_id: 
+  job_id: 
+  user_id: 
+
+two:
+  date: 2014-09-30
+  jobApplicationStatus_id: 
+  job_id: 
+  user_id: 

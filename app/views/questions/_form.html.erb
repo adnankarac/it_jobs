@@ -1,0 +1,21 @@
+
+
+<div id="form">
+	<%= form_for [@test, setup_question(@question)] do |f| %>
+		<p>
+			<div id="question">
+				<%= f.label :question, "Pitanje: " %>
+				<%= f.text_field :question %> </br>
+			</div>
+			<div id="answers">	
+				<%= f.fields_for :answers do |ff| %>
+					<%= ff.label :description, "Odgovor: " %> 
+					<%= ff.text_field :description %>
+					<%= ff.check_box :correct %>
+					</br>
+				<% end %>
+			</div>
+		</p>
+		<%= f.submit "Kreiraj pitanje!"%>
+	<% end %>
+</div>

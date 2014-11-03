@@ -1,0 +1,6 @@
+
+<% @test.questions.each do |question| %>
+	<div>
+		<%= link_to question.question, edit_test_question_path(id: question.id) %> </br>
+	</div>
+<% end %>

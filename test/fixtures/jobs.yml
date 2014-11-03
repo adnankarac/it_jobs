@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  status: 1
+  description: MyText
+  company_id: 
+
+two:
+  status: 1
+  description: MyText
+  company_id: 

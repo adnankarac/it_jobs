@@ -1,0 +1,9 @@
+<h2>Pitanje</h2>
+
+<div>
+<%= link_to "Uredi pitanje", edit_test_question_path %>
+</div>
+<div>
+<%= link_to "Izbriši pitanje", test_question_path, :method => :delete %>
+</div>
+<%= render "question" %>

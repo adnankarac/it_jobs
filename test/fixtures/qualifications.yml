@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  from: 2014-09-30
+  to: 2014-09-30
+  description: MyString
+  faculty: MyString
+  university: MyString
+  user_id: 
+
+two:
+  from: 2014-09-30
+  to: 2014-09-30
+  description: MyString
+  faculty: MyString
+  university: MyString
+  user_id: 

@@ -1,0 +1,16 @@
+
+
+<div id="question">
+	</br>
+	<%= "Pitanje: #{@question.question}" %> </br> </br>
+	<% @question.answers.each do |answer| %>
+		<div>
+			<%= answer.description %> 
+			<% if answer.correct %>
+				<%= " | tačan" %>
+			<% else %>
+				<%= " | netačan" %>
+			<% end %>
+		</div>
+	<% end %>
+</div>
