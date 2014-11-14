@@ -13,4 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap-sprockets
+//= require bootstrap-tagsinput
+//= require angular
 //= require_tree .
+
+receta = angular.module('receta',[])

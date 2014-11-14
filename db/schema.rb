@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140930144733) do
+ActiveRecord::Schema.define(version: 20141107132036) do
 
   create_table "answers", force: true do |t|
     t.string   "description"
@@ -95,32 +95,37 @@ ActiveRecord::Schema.define(version: 20140930144733) do
 
   add_index "questions", ["test_id"], name: "index_questions_on_test_id", using: :btree
 
-  create_table "test_results", force: true do |t|
-    t.integer  "points"
-    t.integer  "test_id"
-    t.integer  "user_id"
+  create_table "tags", force: true do |t|
+    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "test_results", ["test_id"], name: "index_test_results_on_test_id", using: :btree
-  add_index "test_results", ["user_id"], name: "index_test_results_on_user_id", using: :btree
-
-  create_table "test_topic_tests", force: true do |t|
+  create_table "tags_tests", force: true do |t|
+    t.integer  "tag_id"
     t.integer  "test_id"
-    t.integer  "testTopic_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "test_topic_tests", ["testTopic_id"], name: "index_test_topic_tests_on_testTopic_id", using: :btree
-  add_index "test_topic_tests", ["test_id"], name: "index_test_topic_tests_on_test_id", using: :btree
+  add_index "tags_tests", ["tag_id"], name: "index_tags_tests_on_tag_id", using: :btree
+  add_index "tags_tests", ["test_id"], name: "index_tags_tests_on_test_id", using: :btree
 
   create_table "test_topics", force: true do |t|
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "test_topics_tests", force: true do |t|
+    t.integer  "test_id"
+    t.integer  "testTopic_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "test_topics_tests", ["testTopic_id"], name: "index_test_topics_tests_on_testTopic_id", using: :btree
+  add_index "test_topics_tests", ["test_id"], name: "index_test_topics_tests_on_test_id", using: :btree
 
   create_table "tests", force: true do |t|
     t.string   "description"
@@ -131,6 +136,17 @@ ActiveRecord::Schema.define(version: 20140930144733) do
   end
 
   add_index "tests", ["company_id"], name: "index_tests_on_company_id", using: :btree
+
+  create_table "tests_results", force: true do |t|
+    t.integer  "points"
+    t.integer  "test_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tests_results", ["test_id"], name: "index_tests_results_on_test_id", using: :btree
+  add_index "tests_results", ["user_id"], name: "index_tests_results_on_user_id", using: :btree
 
   create_table "user_types", force: true do |t|
     t.string   "description"

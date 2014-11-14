@@ -1,0 +1,11 @@
+<h2>Izbor iz testova</h2>
+
+<% @tests.each do |test| %>
+	<div>
+		<%= test.description %> </br>
+		<%= test.company %>
+		<% test.tags do |tag| %>
+			<%= "#{tag} " %>
+		<% end %>
+	</div>
+<% end %>

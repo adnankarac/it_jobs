@@ -31,6 +31,12 @@ gem 'mysql2'
 
 gem 'bcrypt-ruby'
 
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
+gem 'bootstrap-tagsinput-rails'
+
+gem 'angularjs-rails', '~> 1.3.0'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

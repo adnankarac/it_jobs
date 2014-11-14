@@ -3,16 +3,23 @@
 <div id="form">
 	<%= form_for [@test, setup_question(@question)] do |f| %>
 		<p>
-			<div id="question">
-				<%= f.label :question, "Pitanje: " %>
-				<%= f.text_field :question %> </br>
+			<div class="row">
+	            <div class="form-group col-lg-3">
+					<div id="question">
+						<%= f.label :question, "Pitanje: ", class: 'sr-only'%>
+						<%= f.text_field :question, {class: 'form-control', placeholder: 'Upiši pitanje...'}  %> </br>
+					</div>
+				</div>
 			</div>
 			<div id="answers">	
 				<%= f.fields_for :answers do |ff| %>
-					<%= ff.label :description, "Odgovor: " %> 
-					<%= ff.text_field :description %>
-					<%= ff.check_box :correct %>
-					</br>
+					<div class="row">
+			            <div class="form-group col-lg-3">
+							<%= ff.label :description, "Odgovor: "  %> 
+							<%= ff.text_field :description, {class: 'form-control', placeholder: 'Upiši opis...'}  %>
+							<%= ff.check_box :correct%>
+						</div>
+					</div>
 				<% end %>
 			</div>
 		</p>

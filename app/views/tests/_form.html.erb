@@ -1,7 +1,14 @@
-<%= form_for (@test) do |f| %>
-	<p>
-		<%= f.label :description %>
-		<%= f.text_field :description %>
-	</p>
-	<%= f.submit %>
+<%= form_for (@test) do |test| %>
+	<div class='form-group'>
+		<%= test.label :description, class: "col-sm-1 control-label" %>
+		<div class="col-sm-10">
+			<%= test.text_field :description, {class: 'form-control', placeholder: 'Upiši opis...'}  %>
+			<%= test.fields_for :tags do |tags| %>
+				<%= tags.text_field :tags, {'data-role' => 'tagsinput', 'value' => ''} %>
+			<% end %>
+		</div>
+		
+	</div>
+	<%= test.submit class: 'btn btn-success'%>
+
 <% end %>

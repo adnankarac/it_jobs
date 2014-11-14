@@ -1,7 +1,12 @@
 class TestsController < ApplicationController
 	before_action :set_test, only: [:show]
+
+	def index
+		tags = params[:tags] || []
+		@tests = tags.empty? ? Tag.all : Test.find_by(tag: [tags]) 
+	end
+
 	def show
-		#render :text => @test.questions.map {|x| x.question}
 	end
 
 	def new
@@ -9,7 +14,18 @@ class TestsController < ApplicationController
 	end
 
 	def create
-		test = Test.create(test_params)
+		# corrected_parameters = test_params.reduce({}) do |acc, (k, v)|
+		# 	puts "xxx #{k.inspect} #{v.inspect}"
+		# 	acc[k] = k == "tags" ? v.split : v
+		# 	acc
+		# end
+
+		# raise test_params.inspect
+
+		test = Test.create({
+			"description"=>"opois", 
+			"tags"=>[Tag.create({"description"=>"adnan"})]
+			})
 		redirect_to new_test_question_path(test.id)
 	end
 
